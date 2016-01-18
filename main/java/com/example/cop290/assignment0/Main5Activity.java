@@ -38,7 +38,7 @@ public class Main5Activity extends AppCompatActivity {
             if (res_split[3].equals("\"Data") == true)
                 tv.setText("Please enter data properly.");
             else
-                tv.setText("Already Registered. Go register in some other course.");
+                tv.setText("Already Registered");
         }
 
 

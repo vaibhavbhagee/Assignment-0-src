@@ -30,7 +30,7 @@ public class Main4Activity extends AppCompatActivity {
     private void registerTeamID(Bundle b, final Context this_context_2) {
 
 
-                                                                //Receiving data from calling funcniton in form of bundle
+        //Receiving data from calling function in form of bundle
         String teamname = b.getString("teamname");
         EditText team = ((EditText) findViewById(R.id.team));
         team.setText(teamname);
@@ -102,7 +102,7 @@ public class Main4Activity extends AppCompatActivity {
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(Main4Activity.this, "Server Error. Enter smaller names or please try later.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(Main4Activity.this, "Server Error. Please check your internet connection.", Toast.LENGTH_LONG).show();
                                 }
                             }) {
                         @Override

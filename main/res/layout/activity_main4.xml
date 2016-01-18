@@ -14,12 +14,12 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:rotation="180"
+        android:rotation="270"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:backgroundTint="#9999FF"
 
-        android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"
+        android:src="@android:drawable/ic_menu_send"
         />
 
 </android.support.design.widget.CoordinatorLayout>

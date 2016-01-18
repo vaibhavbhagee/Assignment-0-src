@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/name1"
-        android:hint="Name 1"
+        android:hint="Name"
         android:text=""
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
@@ -79,6 +79,17 @@
         android:id="@+id/fabback"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Member 1"
+        android:id="@+id/textView7"
+        android:layout_above="@+id/name1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp"
+        android:textColor="#2f99db" />
 
 
 </RelativeLayout>
