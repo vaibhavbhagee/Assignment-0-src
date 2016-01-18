@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -22,6 +23,9 @@ public class Main5Activity extends AppCompatActivity {
 
         String serverresult = b.getString("response");
         final String res_split[] = serverresult.split(" ");
+
+        Toast.makeText(Main5Activity.this, serverresult.split("\"")[5], Toast.LENGTH_LONG).show();
+        Log.d("Response", serverresult);
 
                                                             //Modifies the layout and message of final screen depending whether registration is successful or nit
         if(res_split[1].equals("1,")==true)

@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         String Name3 = "";
 
 
-        final Context lol = this;
+        final Context this_context = this;
 
 
         super.onCreate(savedInstanceState);
@@ -89,25 +90,38 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Creating Intent to navigate to another activity, using bundle to pass data
+                //validate text input here
+                String Name_Pattern = "[a-zA-Z][a-zA-Z\\s\\_]*";
 
-                Intent intent = new Intent(lol, Main2Activity.class);
+                //check for empty string
+                if(((EditText) findViewById(R.id.team)).getText().toString().equals(""))
+                    new AlertDialog.Builder(this_context).setTitle("Error").setMessage("Field cannot be left Blank!!").setNeutralButton("Close", null).show();
+                    //check for correct team name format
+                else {
+                    if (!((EditText) findViewById(R.id.team)).getText().toString().matches(Name_Pattern))
+                        new AlertDialog.Builder(this_context).setTitle("Error").setMessage("Enter the name of the team correctly!!").setNeutralButton("Close", null).show();
+                    else {
+                        //Creating Intent to navigate to another activity, using bundle to pass data
 
-                Bundle b = new Bundle();
-                b.putString("teamname", ((EditText) findViewById(R.id.team)).getText().toString());
-                b.putString("entry1", entry1);
-                b.putString("name1", name1);
-                b.putString("entry2", entry2);
-                b.putString("name2", name2);
-                b.putString("entry3", entry3);
-                b.putString("name3", name3);
-                intent.putExtras(b);
+                        Intent intent = new Intent(this_context, Main2Activity.class);
+
+                        Bundle b = new Bundle();
+                        b.putString("teamname", ((EditText) findViewById(R.id.team)).getText().toString());
+                        b.putString("entry1", entry1);
+                        b.putString("name1", name1);
+                        b.putString("entry2", entry2);
+                        b.putString("name2", name2);
+                        b.putString("entry3", entry3);
+                        b.putString("name3", name3);
+                        intent.putExtras(b);
 
 
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_out, R.anim.slide_in);
-                //Animation
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.slide_out, R.anim.slide_in);
+                        //Animation
+                    }
 
+                }
             }
         });
 

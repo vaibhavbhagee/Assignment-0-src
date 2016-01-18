@@ -25,9 +25,7 @@
         android:layout_alignParentEnd="true"
         android:textAlignment="center"
         android:textColor="#5566FF"
-        android:password="false"
         android:textColorHighlight="#122145"
-        android:phoneNumber="false"
         android:background="#331283" />
 
 
